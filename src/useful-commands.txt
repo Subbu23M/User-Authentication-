@@ -1,0 +1,19 @@
+Useful npm Commands
+
+1)npm install validator
+
+2)npm install axios
+
+3)npm install node-sass
+
+4)npm install react-router-dom@5.2.0
+
+5)npm install redux
+
+6)npm install react-redux
+
+7)npm install redux-thunk
+
+8)To add react strap
+    npm i bootstrap
+    npm i reactstrap react react-dom

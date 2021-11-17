@@ -1,0 +1,27 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: lightgoldenrodyellow;
+}
+
+li:hover{
+    color: aliceblue;
+}
+
+.inputTag{
+    margin-left: 35rem;
+
+    .inputWidth{
+        width: 30%;
+
+        &:hover{
+            border: none;
+        }
+    }
+}
+
+.btnGroup{
+    margin-left: 37rem;
+}
