@@ -15,7 +15,7 @@ const store = configureStore();
 console.log(store.getState());
 
 // when we dispatch an action to store,we should subscribe to notify that state is updated
-store.subscribe(function () {
+store.subscribe(() => {
   console.log(store.getState());
 });
 
