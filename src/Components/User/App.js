@@ -4,7 +4,8 @@ import NavBar from './NavBar';
 
 import '../../CSS/Main.scss';
 
-function App() {
+// ES6-Arrow function
+const App = () => {
     
     return (
         <>
