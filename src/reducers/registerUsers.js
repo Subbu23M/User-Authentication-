@@ -5,7 +5,7 @@ const initialStateValue = {
     data:[]
 }
 
-const registerUsers = function(state = initialStateValue,action){
+const registerUsers = (state = initialStateValue,action) => {
     switch(action.type){
 
         case 'SET_USER_INFO' : {
