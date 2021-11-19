@@ -3,8 +3,8 @@
 import axios from 'axios';
 
 // To create new record in DB
-export const startCreateNewNote = function(task){
-    return function(dispatch){
+export const startCreateNewNote = (task) => {
+    return (dispatch) => {
         const baseUrl = 'http://dct-user-auth.herokuapp.com/api/notes';
 
         // consuming code to interact with server
@@ -15,7 +15,7 @@ export const startCreateNewNote = function(task){
                 }
             })
 
-            .then(function(response){
+            .then((response) => {
                 const result = response.data;
                 // console.log(result);
                 
@@ -23,14 +23,14 @@ export const startCreateNewNote = function(task){
                 dispatch(addNotes(result));
             })
 
-            .catch(function(error){
+            .catch((error) => {
                 alert(error.message);
             })
     }
 }
 
 // Action creator / generator
-export const addNotes = function(note){
+export const addNotes = (note) => {
     return {
         type:'ADD_NOTE',
         payload:note
@@ -38,8 +38,8 @@ export const addNotes = function(note){
 } 
 
 // To List all notes
-export const startListAllNotes = function(token){
-    return function(dispatch){
+export const startListAllNotes = (token) => {
+    return (dispatch) => {
         const baseUrl = 'http://dct-user-auth.herokuapp.com/api/notes';
 
         // Consuming Code
@@ -49,7 +49,7 @@ export const startListAllNotes = function(token){
                     'x-auth':token
                 }})
 
-            .then(function(response){
+            .then((response) => {
                 const result = response.data;
                 // console.log(result);
 
@@ -57,14 +57,14 @@ export const startListAllNotes = function(token){
                 dispatch(setNotes(result));
             })
 
-            .catch(function(error){
+            .catch((error) => {
                 alert(error.message);
             })
     }
 } 
 
 // Action Creator / Generator
-export const setNotes = function(notes){
+export const setNotes = (notes) => {
     return{
         type:'SET_NOTES',
         payload:notes
@@ -72,8 +72,8 @@ export const setNotes = function(notes){
 } 
 
 // To delete particular record
-export const deleteASingleNote = function(_id){
-    return function(dispatch){
+export const deleteASingleNote = (_id) => {
+    return (dispatch) => {
         const baseUrlTwo = `http://dct-user-auth.herokuapp.com/api/notes/${_id}`;
 
         const confirm = window.confirm('are you sure to remove');
@@ -88,7 +88,7 @@ export const deleteASingleNote = function(_id){
                     }
                 })
 
-                .then(function(response){
+                .then((response) => {
                     const result = response.data;
                     // console.log(result);
 
@@ -96,7 +96,7 @@ export const deleteASingleNote = function(_id){
                     dispatch(removeItem(result._id));
                 })
 
-                .catch(function(error){
+                .catch((error) => {
                     alert(error.message);
                 })
         }
@@ -105,7 +105,7 @@ export const deleteASingleNote = function(_id){
 }
 
 // Action Generator / Creator
-export const removeItem = function(_id){
+export const removeItem = (_id) => {
     return {
         type:'REMOVE_ITEM',
         payload:_id
@@ -113,8 +113,8 @@ export const removeItem = function(_id){
 }
 
 // To Show Single note
-export const showASingleNote = function(_id){
-    return function(){
+export const showASingleNote = (_id) => {
+    return () => {
         const baseUrlOne = `http://dct-user-auth.herokuapp.com/api/notes/${_id}`;
 
         // consuming code
@@ -125,7 +125,7 @@ export const showASingleNote = function(_id){
                 }
             })
 
-            .then(function(response){
+            .then((response) => {
                 const result = response.data;
                 // console.log(result);
 
@@ -136,7 +136,7 @@ export const showASingleNote = function(_id){
                 }
             })
 
-            .catch(function(error){
+            .catch((error) => {
                 alert(error.message);
             })
     }
