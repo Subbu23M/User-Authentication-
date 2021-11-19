@@ -2,7 +2,8 @@ import React from 'react';
 
 import spinner from './assets/Spinner.gif';
 
-function Loader(props) {
+// ES6-Arrow function
+const Loader = (props) => {
 
     return (
         <>
