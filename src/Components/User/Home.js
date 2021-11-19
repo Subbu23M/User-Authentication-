@@ -2,7 +2,7 @@ import React from 'react';
 
 import HeaderTags from '../../HTML-Elements/HeaderTags';
 
-function Home(props) {
+const Home = (props) => {
     return (
         <>
 
