@@ -1,17 +1,18 @@
 import React,{useState} from 'react';
 
-function MyNotesForm(props) {
+// ES6-Arrow function
+const MyNotesForm = (props) => {
 
     // Object Destructuring - ES6
     const{formSubmitFunc} = props;
 
-    // State variables to make form inputs as controlled components
+    // State variables to make form inputs as controlled component
     const[title,setTitle] = useState('');
 
     const[body,setBody] = useState('');
 
     // Event handler as callback function - 1 
-    const handleTitle = function(e){
+    const handleTitle = (e) => {
         const inputValue = e.target.value;
 
         // Invoke State function
@@ -19,11 +20,11 @@ function MyNotesForm(props) {
     }
 
     // Event handler as callback function - 2 
-    const handleBody = function(e){
+    const handleBody = (e) => {
         const inputValue = e.target.value;
 
         // Invoke State function
-        setBody(inputValue)
+        setBody(inputValue);
     }
 
     // To store form errors in Object
@@ -33,7 +34,7 @@ function MyNotesForm(props) {
     const findErrors = {};
 
     // Form Validation
-    const runFormValidation = function(){
+    const runFormValidation = () => {
 
         // For Title
         if(title.trim().length === 0){
@@ -43,7 +44,7 @@ function MyNotesForm(props) {
     }
 
     // Save button
-    const handleSave = function(e){
+    const handleSave = (e) => {
         // To stop page to reload
         e.preventDefault();
 
@@ -54,10 +55,10 @@ function MyNotesForm(props) {
             // Invoke State function
             setFormErros({});
 
-            // User Inputs
+            // User Inputs ES6 Concise Property
             const notesDataTwo = {
-                title : title,
-                body:body
+                title,
+                body
             }
 
             // Invoke function
@@ -96,7 +97,6 @@ function MyNotesForm(props) {
                     /> 
 
                     {/* Conditional Rendering Simple...if */}
-
                     {
                         formErrors.title && <span className='text-danger'> {formErrors.title} </span>
                     }
