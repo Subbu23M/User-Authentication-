@@ -10,7 +10,7 @@ import {useDispatch} from 'react-redux';
 
 import {userLogin} from '../actions/../../actions/registerAction';
 
-function Login(props) {
+const Login = (props) => {
     const dispatch = useDispatch();
 
     // Initial Values
@@ -24,7 +24,7 @@ function Login(props) {
     const findErrors = {};
 
     // Form Validation
-    const runValidation = function(){
+    const runValidation = () => {
         // For Email
         if (user.email.trim().length === 0) {
             // Object operations creating new property along with value
@@ -45,7 +45,7 @@ function Login(props) {
     }
 
     // Event Handler as callback function - 1  to make form as controlled inputs
-    const handleForm = function(e){
+    const handleForm = (e) => {
         const res = e.target.name;
 
         const inputValue = e.target.value;
@@ -60,7 +60,7 @@ function Login(props) {
     }
 
     // Event Handler as callback function - 2 to submit the form
-    const handleSubmit = function(e){
+    const handleSubmit = (e) => {
         // To prevent browser to refresh
         e.preventDefault();
 
