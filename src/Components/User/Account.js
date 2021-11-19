@@ -6,10 +6,10 @@ import Loader from '../../Loader';
 
 import HeaderTags from '../../HTML-Elements/HeaderTags';
 
-function Account() {
+const Account = () => {
 
     // To read state within the component
-    const store = useSelector(function(state){
+    const store = useSelector((state) => {
         return state.user.data;
     }) 
     // console.log(store);
