@@ -7,7 +7,7 @@ import registerUsers from '../reducers/registerUsers';
 import notesReducer from '../reducers/notesReducer';
 
 // creating store
-const configureStore = function(){
+const configureStore = () => {
     const rootReducer = {
         user:registerUsers,
         notes:notesReducer
