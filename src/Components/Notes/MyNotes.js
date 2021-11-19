@@ -4,7 +4,8 @@ import HeaderTags from '../../HTML-Elements/HeaderTags';
 
 import MyNotesContainer from '../Notes/MyNotesContainer';
 
-function MyNotes() {
+// ES6-Arrow function
+const MyNotes = () => {
     return (
         <>
 
