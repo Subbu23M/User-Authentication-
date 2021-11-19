@@ -5,7 +5,7 @@ const notesInitialState = {
     data : []
 }
 
-const notesReducer = function(state = notesInitialState,action){
+const notesReducer = (state = notesInitialState,action) => {
     switch(action.type){
         case 'SET_NOTES':{
             return {...state,data:[...action.payload]}
@@ -16,7 +16,7 @@ const notesReducer = function(state = notesInitialState,action){
         }
 
         case 'REMOVE_ITEM' : {
-            const result = state.data.filter(function(note){
+            const result = state.data.filter((note) => {
                 if(note._id !== action.payload){
                     return true;
                 }
