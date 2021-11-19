@@ -18,12 +18,13 @@ import {useSelector,useDispatch} from 'react-redux';
 
 import { getuserDetails, setUserInfo } from '../../actions/registerAction';
 
-function NavBar(props) {
+// ES6 - Arrow function
+const NavBar = (props) => {
 
     const dispatch = useDispatch();
 
     // To check whether user is logged in or not.
-    const fetchData = function(){
+    const fetchData = () => {
         // Get 'JWT_Token'
         const token = localStorage.getItem('JWT_Token');
 
@@ -37,12 +38,12 @@ function NavBar(props) {
     useEffect(fetchData,[]);
 
     // Read state within the component
-    const store = useSelector(function(state){
+    const store = useSelector((state) => {
         return state.user.data
     })
 
     // Event Handler as callback function
-    const handleLogOut = function(e){
+    const handleLogOut = (e) => {
         // remove token from localStorage
         localStorage.removeItem('JWT_TOKEN');
 
