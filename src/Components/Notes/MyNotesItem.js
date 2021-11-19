@@ -4,7 +4,8 @@ import {useDispatch} from 'react-redux';
 
 import {showASingleNote,deleteASingleNote} from '../actions/../../actions/myNotesAction';
 
-function MyNotesItem(props) {
+// ES6-Arrow function
+const MyNotesItem = (props) => {
 
     const dispatch = useDispatch();
 
@@ -12,13 +13,13 @@ function MyNotesItem(props) {
     const { _id, title, body} = props;
 
     // Event Handler as callback function to display.
-    const handleShow = function(){
+    const handleShow = () => {
         // Dispatch an action to send id
         dispatch(showASingleNote(_id))
     }
 
     // Event Handler as callback function to delete.
-    const handleRemove = function(){
+    const handleRemove = () => {
         // Dispatch action to delete a note
         dispatch(deleteASingleNote(_id))
     }
