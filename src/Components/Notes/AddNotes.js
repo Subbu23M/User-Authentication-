@@ -6,12 +6,13 @@ import {startCreateNewNote} from '../actions/../../actions/myNotesAction';
 
 import MyNotesForm from './Notes/../MyNotesForm';
 
-function AddNotes(props) {
+// ES6-Arrow function
+const AddNotes = (props) => {
 
     const dispatch = useDispatch();
 
     // callback function
-    const formSubmit = function(task){
+    const formSubmit = (task) => {
         // Dispatch action
         dispatch(startCreateNewNote(task))
     }
