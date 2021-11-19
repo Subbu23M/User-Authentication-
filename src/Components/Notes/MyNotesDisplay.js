@@ -4,10 +4,11 @@ import MyNotesItem from '../Notes/MyNotesItem';
 
 import {useSelector} from 'react-redux';
 
-function MyNotesDisplay() {
+// ES6-Arrow function
+const MyNotesDisplay = () => {
 
     // To read state within the component
-    const notesData = useSelector(function(state){
+    const notesData = useSelector((state) => {
         return state.notes;
     })
     
@@ -19,7 +20,6 @@ function MyNotesDisplay() {
             </h3>
 
             {/* Conditional Rendering - Ternary Operator */}
-
             {
                 (notesData.data.length === 0) ? 
                                             <p className='text-capitalize text-warning lead'> no notes found add your first note </p> 
@@ -27,7 +27,7 @@ function MyNotesDisplay() {
 
                                         <>
                                             {
-                                                notesData.data.map(function(ele){
+                                                notesData.data.map((ele) => {
                                                     return(
                                                         <MyNotesItem
                                                             key={ele._id}
