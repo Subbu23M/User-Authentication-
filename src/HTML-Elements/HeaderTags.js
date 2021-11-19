@@ -1,6 +1,6 @@
 import React from 'react';
 
-function HeaderTags(props) {
+const HeaderTags = (props) => {
     // Object Destructuring - ES6
     const{Tag,className,text} = props;
 
