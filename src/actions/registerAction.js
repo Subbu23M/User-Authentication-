@@ -3,16 +3,16 @@
 import axios from 'axios';
 
 // Action for new register
-export const startRegisterAction = function(registerData,redirect, resetForm){
+export const startRegisterAction = (registerData,redirect, resetForm) => {
     return(
-        function(){
+        () => {
             const baseUrl = 'http://dct-user-auth.herokuapp.com/users/register';
 
             // consuming code
             axios
                 .post(baseUrl,registerData)
 
-                .then(function(response){
+                .then((response) => {
                     const result = response.data;
                     // console.log(result);
 
@@ -27,7 +27,7 @@ export const startRegisterAction = function(registerData,redirect, resetForm){
                     }    
                 })
 
-                .catch(function(error){
+                .catch((error) => {
                     alert(error.message);
                 })
         }
@@ -35,16 +35,16 @@ export const startRegisterAction = function(registerData,redirect, resetForm){
 }
 
 // Action for login
-export const userLogin = function(loginData,redirect, resetForm){
+export const userLogin = (loginData,redirect, resetForm) => {
     return(
-        function(dispatch){
+        (dispatch) => {
             const baseUrlTwo = 'http://dct-user-auth.herokuapp.com/users/login';
 
             // consuming code
             axios
                 .post(baseUrlTwo,loginData)
 
-                .then(function(response){
+                .then((response) => {
                     const result = response.data;
                     // console.log(result);
 
@@ -65,7 +65,7 @@ export const userLogin = function(loginData,redirect, resetForm){
                     }
                 })
 
-                .catch(function(error){
+                .catch((error) => {
                     alert(error.message);
                 })
         }
@@ -73,9 +73,9 @@ export const userLogin = function(loginData,redirect, resetForm){
 }
 
 // Action to get user personal details
-export const getuserDetails = function(){
+export const getuserDetails = () => {
     return(
-        function(dispatch){
+        (dispatch) => {
             const baseUrl = 'http://dct-user-auth.herokuapp.com/users/account';
 
             // consuming code
@@ -86,7 +86,7 @@ export const getuserDetails = function(){
                     }
                 })
 
-                .then(function(response){
+                .then((response) => {
                     const result = response.data;
 
                     // dispatch action to state
@@ -94,7 +94,7 @@ export const getuserDetails = function(){
                     dispatch(stopLoading());
                 })
 
-                .catch(function(error){
+                .catch((error) => {
                     alert(error.message)
                 })
         }
@@ -102,7 +102,7 @@ export const getuserDetails = function(){
 }
 
 // action creator / generator
-export const setUserInfo = function(user){
+export const setUserInfo = (user) => {
     return{
         type:'SET_USER_INFO',
         payload:user
@@ -110,7 +110,7 @@ export const setUserInfo = function(user){
 }
 
 // action generator to stop loading
-export const stopLoading = function(){
+export const stopLoading = () => {
     return({
         type:'STOP_LOADING'
     })
