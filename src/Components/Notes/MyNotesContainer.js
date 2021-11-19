@@ -8,12 +8,13 @@ import {useDispatch} from 'react-redux';
 
 import {startListAllNotes} from '../actions/../../actions/myNotesAction';
 
-function MyNotesContainer() {
+// ES6-Arrow function
+const MyNotesContainer = () => {
 
     const dispatch = useDispatch();
 
     // To collect JWT_TOKEN from localStorage
-    const useFunc = function(){
+    const useFunc = () => {
         const getToken = localStorage.getItem('JWT_TOKEN');
 
         // Dispatch action to send token
