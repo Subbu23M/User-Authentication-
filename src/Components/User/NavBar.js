@@ -99,7 +99,7 @@ const NavBar = (props) => {
 
                                 <li className='list-group-item'>
 
-                                    <Link to='/logout' onClick={handleLogOut}>
+                                    <Link to='#' onClick={handleLogOut}>
                                         Logout 
                                     </Link>
 
