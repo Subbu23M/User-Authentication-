@@ -45,7 +45,7 @@ const NavBar = (props) => {
     // Event Handler as callback function
     const handleLogOut = (e) => {
         // remove token from localStorage
-        localStorage.removeItem('JWT_TOKEN');
+        localStorage.removeItem('JWT_Token');
 
         alert('you are logged out successfully');
 
